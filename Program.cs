@@ -51,7 +51,9 @@ namespace NumberGuesser {
                     PrintColorMessage(ConsoleColor.Yellow, String.Format("Score: {0} \nThanks for playing.", score));              
                     return;
                 }
+                Console.ReadLine();
             }
+            
         }
         static void GetAppInfo() {
             string appName = "Number Guesser";
