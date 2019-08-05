@@ -11,6 +11,8 @@ namespace NumberGuesser {
                 Random random = new Random();
                 int correctNumber = random.Next(1, 10);
                 int guess = 0;
+                int life = 3;
+
                 PrintColorMessage(ConsoleColor.Yellow, "Score: " + score);
 
                 while (guess != correctNumber) {
@@ -24,11 +26,19 @@ namespace NumberGuesser {
                     guess = Int32.Parse(inputNum);
 
                     if (guess != correctNumber) {
+                        life--;
+                        if(life == 0) {
+                            PrintColorMessage(ConsoleColor.Red, "Sorry. You lose this round.");
+                            break;
+                        }
                         PrintColorMessage(ConsoleColor.Red, "Wrong number. Try again.");                    
                     }
                 }
-                PrintColorMessage(ConsoleColor.Yellow, "Congratulations. You are correct!");
-                score++;
+                if(guess == correctNumber) {
+                    PrintColorMessage(ConsoleColor.Yellow, "Congratulations. You are correct!");
+                    score++;
+                }
+                
 
                 Console.WriteLine("Play again? [Y/N]");
                 string answer = Console.ReadLine().ToUpper();
@@ -37,7 +47,7 @@ namespace NumberGuesser {
                     continue;
                 }
                 else if(answer == "N") {
-                    PrintColorMessage(ConsoleColor.Yellow, String.Format("Score: {0} \n Thanks for playing.", score));              
+                    PrintColorMessage(ConsoleColor.Yellow, String.Format("Score: {0} \nThanks for playing.", score));              
                     return;
                 }
             }
