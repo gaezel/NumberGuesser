@@ -1,0 +1,6 @@
+C:\Projects\NumberGuesser\bin\Release\NumberGuesser.exe.config
+C:\Projects\NumberGuesser\bin\Release\NumberGuesser.exe
+C:\Projects\NumberGuesser\bin\Release\NumberGuesser.pdb
+C:\Projects\NumberGuesser\obj\Release\NumberGuesser.csproj.CoreCompileInputs.cache
+C:\Projects\NumberGuesser\obj\Release\NumberGuesser.exe
+C:\Projects\NumberGuesser\obj\Release\NumberGuesser.pdb

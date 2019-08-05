@@ -16,11 +16,12 @@ namespace NumberGuesser {
                 PrintColorMessage(ConsoleColor.Yellow, "Score: " + score);
 
                 while (guess != correctNumber) {
-                    Console.WriteLine("Guess a number between 1 and 10");
+                    Console.WriteLine("Guess a number: 1 - 10");
                     string inputNum = Console.ReadLine();
 
                     if (!int.TryParse(inputNum, out guess)) {
-                        PrintColorMessage(ConsoleColor.Red, "This is not a number...");
+                        PrintColorMessage(ConsoleColor.Red, "Wrong answer! Make sure you have a valid number (Hint: 1 - 10) ");
+                        life--;
                         continue;
                     }
                     guess = Int32.Parse(inputNum);
@@ -28,7 +29,7 @@ namespace NumberGuesser {
                     if (guess != correctNumber) {
                         life--;
                         if(life == 0) {
-                            PrintColorMessage(ConsoleColor.Red, "Sorry. You lose this round.");
+                            PrintColorMessage(ConsoleColor.Red, "Sorry, you lose this round.");
                             break;
                         }
                         PrintColorMessage(ConsoleColor.Red, "Wrong number. Try again.");                    
