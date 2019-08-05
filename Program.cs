@@ -48,10 +48,11 @@ namespace NumberGuesser {
                     continue;
                 }
                 else if(answer == "N") {
-                    PrintColorMessage(ConsoleColor.Yellow, String.Format("Score: {0} \nThanks for playing.", score));              
+                    PrintColorMessage(ConsoleColor.Yellow, String.Format("Score: {0} \nThanks for playing.", score));
+                    Console.ReadLine();
                     return;
                 }
-                Console.ReadLine();
+                
             }
             
         }
